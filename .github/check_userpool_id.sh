@@ -1,6 +1,6 @@
 #!/bin/bash
 #対象ファイル一覧を取得
-TARGET_FILE_LIST=($(grep -rl "user_pool_id" ../js/))
+TARGET_FILE_LIST=(`grep -rl "user_pool_id" ../js/`)
 
 #USER POOL存在確認
 aws cognito-idp list-user-pools --max-results 1 --region ap-northeast-1 --profile stg > /dev/null 2>&1 
