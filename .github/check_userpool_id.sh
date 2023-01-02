@@ -27,10 +27,10 @@ do
   echo ${FILE_CLIENT_ID}
   #ID置き換え
   if [ ${USER_POOL_ID} != ${FILE_USER_POOL_ID} ]; then
-    sed -i '' 's/'${FILE_USER_POOL_ID}'/'${USER_POOL_ID}'/' $i
+    sed -i 's/'${FILE_USER_POOL_ID}'/'${USER_POOL_ID}'/' $i
   fi
 
   if [ ${CLIENT_ID} != ${FILE_CLIENT_ID} ]; then
-    sed -i '' 's/'${FILE_CLIENT_ID}'/'${CLIENT_ID}'/' $i
+    sed -i 's/'${FILE_CLIENT_ID}'/'${CLIENT_ID}'/' $i
   fi
 done
