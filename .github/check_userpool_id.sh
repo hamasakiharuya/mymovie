@@ -1,6 +1,5 @@
 #!/bin/bash
 #対象ファイル一覧を取得
-
 TARGET_FILE_LIST=(`grep -rl "user_pool_id" ../js/`)
 
 #USER POOL存在確認
