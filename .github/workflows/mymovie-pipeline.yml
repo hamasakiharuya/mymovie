@@ -17,7 +17,7 @@ jobs:
           role-to-assume: ${{ env.AWS_ROLE_ARN }}
           aws-region: ap-northeast-1
       # check UserPoolId
-      - run: sh ./.github/check_userpool_id.sh
+      - run: bash ./.github/check_userpool_id.sh
       
       # deploy application file
       - run: aws s3 sync ./ s3://mymovie-stg-${{ secrets.AWS_ACCOUNT_ID }}/
