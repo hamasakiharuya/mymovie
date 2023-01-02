@@ -3,12 +3,12 @@
 TARGET_FILE_LIST=(`grep -rl "user_pool_id" ./js/`)
 
 #USER POOL存在確認
-aws cognito-idp list-user-pools --max-results 1 --region ap-northeast-1 --profile stg > /dev/null 2>&1 
+aws cognito-idp list-user-pools --max-results 1 --region ap-northeast-1 > /dev/null 2>&1 
 USER_POOL_CHRCK=$?
 #現在のID
 if [ ${USER_POOL_CHRCK} -eq 0 ]; then
-  USER_POOL_ID=`aws cognito-idp list-user-pools --max-results 1 --region ap-northeast-1 --profile stg | grep "Id" | cut -d ":" -f2 | tr -d \" | tr -d , | tr -d ' '`
-  CLIENT_ID=`aws cognito-idp list-user-pool-clients --user-pool-id ${USER_POOL_ID} --region ap-northeast-1 --profile stg | grep "ClientId" | cut -d ":" -f2 | tr -d ' ' | tr -d \" | tr -d \,`
+  USER_POOL_ID=`aws cognito-idp list-user-pools --max-results 1 --region ap-northeast-1 | grep "Id" | cut -d ":" -f2 | tr -d \" | tr -d , | tr -d ' '`
+  CLIENT_ID=`aws cognito-idp list-user-pool-clients --user-pool-id ${USER_POOL_ID} --region ap-northeast-1 | grep "ClientId" | cut -d ":" -f2 | tr -d ' ' | tr -d \" | tr -d \,`
 else
   echo "ERROR: USER_POOL does not exist"
   exit 1
