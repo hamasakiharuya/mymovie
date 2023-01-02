@@ -20,4 +20,4 @@ jobs:
       - run: sh ./.github/check_userpool_id.sh
       
       # deploy application file
-      - run: aws s3 sync ./ s3://mymovie-stg-130844460738/
+      - run: aws s3 sync ./ s3://mymovie-stg-${{ secrets.AWS_ACCOUNT_ID }}/
