@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <!-- viewport meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Required cognito -->
+    <script src="js/cognito/jsbn.js"></script>
+    <script src="js/cognito/jsbn2.js"></script>
+    <script src="js/cognito/sjcl.js"></script>
+    <script src="js/cognito/aws-sdk.min.js"></script>
+    <script src="js/cognito/aws-cognito-sdk.min.js"></script>
+    <script src="js/cognito/amazon-cognito-identity.min.js"></script>
+    <!-- Required jquery lazyload -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/lazyload.min.js"></script>
+    <!-- Required js/css -->
+    <script src="js/user.js"></script>
+    <link rel="stylesheet" href="css/score.css">
+  </head>
+</html>
+<body>
+  <div>
+    <!-- 会員状態 -->
+    <div>
+      <div class="container-fluid w-75 p-3">
+        <div class="d-flex justify-content-end" id="signinup">
+        </div>
+        <div class="d-flex justify-content-end" id="signout">
+        </div>
+      </div>
+    </div>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container-fluid w-75 p-3">
+        <div id="logo">
+          <a class="navbar-brand" href="./user.html">My Movie</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item" id="register">
+            </li>
+            <li class="nav-item" id="edit">
+            </li>
+            <li class="nav-item" id="followlist">
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                順番
+              </a>
+              <ul id="nav_order" class="dropdown-menu" aria-labelledby="navbarDropdown">
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <input class="form-control me-2" id="user_id" type="search" placeholder="UserID検索" aria-label="Search">
+            <button class="btn btn-outline-success" id="user">Search</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ユーザー紹介 -->
+    <div>
+      <div class="container-fluid w-75 p-3">
+        <div class="fs-1" id="username"></div>
+        <div id="sns"></div>
+        <div id="count"></div>
+        <div id="follow"></div>
+      </div>
+    </div>
+
+    <!-- 映画リスト -->
+    <div class="container-fluid w-75 p-3">
+      <div id="level_9"></div>
+      <div class="card-group row row-cols-1 row-cols-md-4 g-4" id="movie_image_9">
+      </div>
+      <div id="level_8"></div>
+      <div class="card-group row row-cols-1 row-cols-md-4 g-4" id="movie_image_8">
+      </div>
+      <div id="level_7"></div>
+      <div class="card-group row row-cols-1 row-cols-md-4 g-4" id="movie_image_7">
+      </div>
+      <div id="level_6"></div>
+      <div class="card-group row row-cols-1 row-cols-md-4 g-4" id="movie_image_6">
+      </div>
+      <div id="level_5"></div>
+      <div class="card-group row row-cols-1 row-cols-md-4 g-4" id="movie_image_5">
+      </div>
+      <div id="level_4"></div>
+      <div class="card-group row row-cols-1 row-cols-md-4 g-4" id="movie_image_4">
+      </div>
+      <div id="level_3"></div>
+      <div class="card-group row row-cols-1 row-cols-md-4 g-4" id="movie_image_3">
+      </div>
+      <div id="level_2"></div>
+      <div class="card-group row row-cols-1 row-cols-md-4 g-4" id="movie_image_2">
+      </div>
+      <div id="level_1"></div>
+      <div class="card-group row row-cols-1 row-cols-md-4 g-4" id="movie_image_1">
+      </div>
+      <div id="level_0"></div>
+      <div class="card-group row row-cols-1 row-cols-md-4 g-4" id="movie_image_0">
+      </div>
+    </div>
+
+      <!-- フッター -->
+      <div>
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="p-3 mb-2 bg-light text-dark">
+          <div class="container-fluid w-75 p-3">
+            <p class="d-flex justify-content-center fw-light">© 2022 My Movies </p>
+            <p class="d-flex justify-content-center text-center"><span class="fw-bolder">powered by: TMDB<span><br>
+            <span class="fw-lighter">This product uses the TMDb API but is not endorsed or certified by TMDb.</span></p>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
