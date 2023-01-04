@@ -20,6 +20,7 @@ if [[ "${CLOUDFRONT_CNAME}" == *mymovie.jp ]]; then
   do
     sed -ir 's/'{DOMAIN}'/'${CLOUDFRONT_CNAME}'/' $i
     FILE_DOMAIN=`grep "mymovie" $i`
-    echo "Change completed : ${FILE_DOMAIN}"
+    echo "---$i---
+    hange completed : ${FILE_DOMAIN}"
   done
 fi
