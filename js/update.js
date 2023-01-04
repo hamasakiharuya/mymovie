@@ -26,7 +26,7 @@ $(function() {
 
   //削除
   $("#delete_btn").on('click',function() {
-    fetch(`https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/movie?user_id=${user_id}&title=${title}`,{
+    fetch(`https://{DOMAIN}/mymovie-apigw/movie?user_id=${user_id}&title=${title}`,{
       headers: {
         Authorization: id_token
       },

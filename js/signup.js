@@ -82,7 +82,7 @@ var signUp = function() {
       return false;
     }
 
-  fetch(`https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/useremail?username=${username}&email=${email}`)
+  fetch(`https://{DOMAIN}/mymovie-apigw/useremail?username=${username}&email=${email}`)
     .then(response => {
       return response.json();
     })

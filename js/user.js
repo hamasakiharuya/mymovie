@@ -82,9 +82,9 @@ var NavBer = function(){
 //順番ボタン配置
 var Order = function(user_id){
   $("#nav_order").html(`
-    <li><a class="dropdown-item" href="https://d2qoqe32dzzjx7.cloudfront.net/user.html?user_id=${user_id}&list=score">スコア順</a></li>
-    <li><a class="dropdown-item" href="https://d2qoqe32dzzjx7.cloudfront.net/user.html?user_id=${user_id}&list=release">公開日順</a></li>
-    <li><a class="dropdown-item" href="https://d2qoqe32dzzjx7.cloudfront.net/user.html?user_id=${user_id}&list=register">登録日順</a></li>
+    <li><a class="dropdown-item" href="https://{DOMAIN}/user.html?user_id=${user_id}&list=score">スコア順</a></li>
+    <li><a class="dropdown-item" href="https://{DOMAIN}/user.html?user_id=${user_id}&list=release">公開日順</a></li>
+    <li><a class="dropdown-item" href="https://{DOMAIN}/user.html?user_id=${user_id}&list=register">登録日順</a></li>
   `);
 }
 
@@ -122,7 +122,7 @@ var GetUser = function(id_token){
 
 //userテーブルからuser_idをランダムで取得
 var RandomUser = function(){
-  var uri = `https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/userid`
+  var uri = `https://{DOMAIN}/mymovie-apigw/userid`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -212,7 +212,7 @@ var Card = function(data_i){
 };
 
 var release = function(user_id){
-  var uri = `https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/user?topuser=${user_id}&list=release`
+  var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=release`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -309,7 +309,7 @@ var release = function(user_id){
 
 
 var register = function(user_id){
-  var uri = `https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/user?topuser=${user_id}&list=register`
+  var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=register`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -369,7 +369,7 @@ var register = function(user_id){
 };
 
 var score = function(user_id){
-  var uri = `https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/user?topuser=${user_id}&list=score`
+  var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=score`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -493,7 +493,7 @@ var GetUser_Follow = function(follow,already_follow){
 
 //フォローする
 var Follow = function(user_id, follow, id_token){
-  fetch(`https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/follow?user_id=${user_id}&follow=${follow}`,{
+  fetch(`https://{DOMAIN}/mymovie-apigw/follow?user_id=${user_id}&follow=${follow}`,{
     method: 'POST',
     headers: {
       Authorization: id_token

@@ -16,6 +16,8 @@ jobs:
         with:
           role-to-assume: ${{ env.AWS_ROLE_ARN }}
           aws-region: ap-northeast-1
+      # get domain
+      - run: bash ./.github/get_domain.sh
       # check UserPoolId
       - run: bash ./.github/check_userpool_id.sh
       

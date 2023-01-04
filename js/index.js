@@ -128,7 +128,7 @@ var Card = function(data_i){
 };
 
 var release = function(user_id){
-  var uri = `https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/user?topuser=${user_id}&list=release`
+  var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=release`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -185,7 +185,7 @@ var release = function(user_id){
 };
 
 var register = function(user_id){
-  var uri = `https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/user?topuser=${user_id}&list=register`
+  var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=register`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -212,7 +212,7 @@ var score = function(user_id){
     console.log(user_id.length)
     history.back();
     } else {
-    var uri = `https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/user?topuser=${user_id}&list=score`
+    var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=score`
     $.ajax({
       type: 'GET', // HTTPリクエストメソッドの指定
       url: uri, // 送信先URLの指定

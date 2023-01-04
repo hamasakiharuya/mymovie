@@ -30,7 +30,7 @@ $(function() {
   //フォロー削除
   $(document).on('click',"#delete_follow",function() {
     var follow = $(this).data('id');
-    fetch(`https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/follow?user_id=${user_id}&follow=${follow}`,{
+    fetch(`https://{DOMAIN}/mymovie-apigw/follow?user_id=${user_id}&follow=${follow}`,{
       headers: {
         Authorization: id_token
       },
@@ -74,7 +74,7 @@ var AddUserId = function(return_array){
 };
 
 var FollowList = function(user_id){
-  var uri = `https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/follow?user_id=${user_id}`
+  var uri = `https://{DOMAIN}/mymovie-apigw/follow?user_id=${user_id}`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定

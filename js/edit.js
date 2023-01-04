@@ -1,5 +1,5 @@
 // ユーザープールの設定
-var user_pool_id = "ap-northeast-1_ijjGKX"
+var user_pool_id = "ap-northeast-1_ijjGKXaeO"
 var client_id = "dmobejjq04an8tvlolljf5ppp"
 const poolData = {
   UserPoolId : user_pool_id,
@@ -108,7 +108,7 @@ var Card = function(data_i){
 };
 
 var register = function(user_id){
-  var uri = `https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/user?topuser=${user_id}&list=register`
+  var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=register`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -178,7 +178,7 @@ var Update = function(){
 
 var Updateuser = function(){
   var user = $("#user_id").val();
-  fetch(`https://d2qoqe32dzzjx7.cloudfront.net/mymovie-apigw/user?upduser=${user}`,{
+  fetch(`https://{DOMAIN}/mymovie-apigw/user?upduser=${user}`,{
       method: "put"
     })
     .then(response => {
