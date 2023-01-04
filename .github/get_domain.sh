@@ -19,6 +19,5 @@ if [[ "${CLOUDFRONT_CNAME}" == *mymovie.jp ]]; then
   for i in ${TARGET_FILE_LIST[@]}
   do
     sed -ir 's/'{DOMAIN}'/'${CLOUDFRONT_CNAME}'/' $i
-    grep -rl '${CLOUDFRONT_CNAME}' $i
   done
 fi
