@@ -7,7 +7,7 @@ aws cloudfront list-distributions --max-items 1 --output table > /dev/null 2>&1
 USER_POOL_CHRCK=$?
 
 if [ ${USER_POOL_CHRCK} -eq 0 ]; then
-  CLOUDFRONT_CNAME=`aws cloudfront list-distributions --max-items 1 --output table --profile stg | grep "CNAME" | cut -d "|" -f6 | tr -d ' '`
+  CLOUDFRONT_CNAME=`aws cloudfront list-distributions --max-items 1 --output table | grep "CNAME" | cut -d "|" -f6 | tr -d ' '`
   echo ${CLOUDFRONT_CNAME}
 else
   echo "ERROR: CloudFront does not exist"
