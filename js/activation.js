@@ -52,7 +52,7 @@ var activate = function() {
               }
           }
       } else {
-        window.location.href = './signin.html';
+        window.location.href = './index.html';
       }
   });
 };
