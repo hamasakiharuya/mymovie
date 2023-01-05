@@ -1,6 +1,6 @@
 // ユーザープールの設定
-var user_pool_id = "ap-northeast-1_ijjGKXaeO"
-var client_id = "dmobejjq04an8tvlolljf5ppp"
+var user_pool_id = "{USER_POOL_ID}"
+var client_id = "{CLIENT_ID}"
 const poolData = {
   UserPoolId : user_pool_id,
   ClientId : client_id

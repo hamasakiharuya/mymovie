@@ -4,9 +4,12 @@ on:
       - master
 env:
   AWS_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubActionsAccess-AllEnv-role
+
 jobs:
-  build-deploy:
+  build-deploy-staging:
     runs-on: ubuntu-latest
+    environment:
+      name: staging
     permissions:
       id-token: write
       contents: read
@@ -19,7 +22,28 @@ jobs:
       # get domain
       - run: bash ./.github/get_domain.sh
       # check UserPoolId
-      - run: bash ./.github/check_userpool_id.sh
+      - run: bash ./.github/get_userpool_id.sh
       
       # deploy application file
       - run: aws s3 sync ./ s3://mymovie-stg-${{ secrets.AWS_ACCOUNT_ID }}/
+
+ build-deploy-production:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ap-northeast-1
+      # get domain
+      - run: bash ./.github/get_domain.sh
+      # check UserPoolId
+      - run: bash ./.github/get_userpool_id.sh
+      
+      # deploy application file
+      - run: aws s3 sync ./ s3://mymovie-prod-${{ secrets.AWS_ACCOUNT_ID }}/
