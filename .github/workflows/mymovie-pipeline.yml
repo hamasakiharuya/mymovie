@@ -27,7 +27,7 @@ jobs:
       # deploy application file
       - run: aws s3 sync ./ s3://mymovie-stg-${{ secrets.AWS_ACCOUNT_ID }}/
 
- build-deploy-production:
+  build-deploy-production:
     runs-on: ubuntu-latest
     environment:
       name: production
