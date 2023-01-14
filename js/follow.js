@@ -37,14 +37,17 @@ $(function() {
       method: "delete"
     })
     .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      console.log(data)
-      location.reload();
+      if (!response.ok) {
+        //エラーメッセージ表記初期化
+        $("div#message span").empty();
+        $("div#message span").append("データの削除に失敗しました");
+      } else {
+        location.reload();
+      }
     })
     .catch(error => {
-    console.log("失敗しました");
+      $("div#message span").empty();
+      $("div#message span").append("データの削除に失敗しました");
     });
   });
 })
@@ -95,6 +98,6 @@ var FollowList = function(user_id){
     }
   })
   .fail(function() {
-    console.log("failed")
+    $("div#message span").append("データの取得に失敗しました");
   });
 }

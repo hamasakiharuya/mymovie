@@ -179,8 +179,10 @@ var release = function(user_id){
     //画像遅延読み込み
     lazyload();
   })
-  .fail(function() {
-    console.log("failed")
+  .fail(function(data) {
+    var error_data = JSON.parse(data.responseJSON.errorMessage);
+    var error_message = error_data.description;
+    $("div#message span").append(error_message);
   });
 };
 
@@ -202,8 +204,10 @@ var register = function(user_id){
     //画像遅延読み込み
     lazyload();
   })
-  .fail(function() {
-    console.log("failed")
+  .fail(function(data) {
+    var error_data = JSON.parse(data.responseJSON.errorMessage);
+    var error_message = error_data.description;
+    $("div#message span").append(error_message);
   });
 };
 
@@ -262,8 +266,10 @@ var score = function(user_id){
       //画像遅延読み込み
       lazyload();
     })
-  .fail(function() {
-    console.log("failed")
+  .fail(function(data) {
+    var error_data = JSON.parse(data.responseJSON.errorMessage);
+    var error_message = error_data.description;
+    $("div#message span").append(error_message);
   });
  }
 };

@@ -187,8 +187,10 @@ var RandomUser = function(){
     //画像遅延読み込み
     lazyload();
     })
-  .fail(function(){
-    console.log("failed")
+  .fail(function(data){
+    var error_data = JSON.parse(data.responseJSON.errorMessage)
+    var error_message = error_data.description
+    $("div#message span").append(error_message);
   });
 };
 
@@ -302,8 +304,10 @@ var release = function(user_id){
       lazyload();
     };
   })
-  .fail(function() {
-    console.log("failed")
+  .fail(function(data) {
+    var error_data = JSON.parse(data.responseJSON.errorMessage);
+    var error_message = error_data.description;
+    $("div#message span").append(error_message);
   });
 };
 
@@ -363,8 +367,10 @@ var register = function(user_id){
       lazyload();
     };
   })
-  .fail(function() {
-    console.log("failed")
+  .fail(function(data) {
+    var error_data = JSON.parse(data.responseJSON.errorMessage);
+    var error_message = error_data.description;
+    $("div#message span").append(error_message);
   });
 };
 
@@ -456,8 +462,10 @@ var score = function(user_id){
     lazyload();
    };
   })
-  .fail(function() {
-    console.log("failed")
+  .fail(function(data) {
+    var error_data = JSON.parse(data.responseJSON.errorMessage);
+    var error_message = error_data.description;
+    $("div#message span").append(error_message);
   });
 };
 
@@ -500,13 +508,16 @@ var Follow = function(user_id, follow, id_token){
     }
   })
   .then(response => {
-    return response.json();
-  })
-  .then(data => {
-    console.log(data)
-    $("div#follow").html('<button class="btn btn-outline-danger disabled">Following</button>');
+    if (!response.ok) {
+      //エラーメッセージ表記初期化
+      $("div#message span").empty();
+      $("div#message span").append("データの登録に失敗しました");
+    } else {
+      $("div#message span").empty();
+      $("div#follow").html('<button class="btn btn-outline-danger disabled">Following</button>');
+    }
   })
   .catch(error => {
-  console.log("失敗しました");
+    $("div#message span").append("データの登録に失敗しました");
   });
 }

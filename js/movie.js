@@ -81,7 +81,6 @@ var UserList = function(title){
     dataType: 'json', // 受信するデータタイプの指定
   })
   .done(function(data) {
-    console.log(data)
     var title = data.Items[0].title["S"];
     var total_score = 0;
     var poster_path = data.Items[0].image_path["S"];
@@ -107,6 +106,6 @@ var UserList = function(title){
     $("#score").append(avarage);
   })
   .fail(function() {
-    console.log("failed")
+    $("div#message span").append("データの取得に失敗しました");
   });
  }

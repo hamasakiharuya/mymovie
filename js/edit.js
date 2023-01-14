@@ -188,6 +188,7 @@ var Updateuser = function(){
       console.log(data)
     })    
     .catch(error => {
-    console.log("失敗しました");
+      $("div#message span").empty();
+      $("div#message span").append("データの更新に失敗しました");
     });
 };

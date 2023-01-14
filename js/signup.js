@@ -37,9 +37,9 @@ $(function() {
 * サインアップ処理。
 */
 var signUp = function() {
-
   var username = $("#username").val();
   var email = $("#email").val();
+  var email_md5 = CybozuLabs.MD5.calc(email);
   var name = $("#name").val();
   //誕生日
   var year = $("#year").val();
@@ -82,7 +82,7 @@ var signUp = function() {
       return false;
     }
 
-  fetch(`https://{DOMAIN}/mymovie-apigw/useremail?username=${username}&email=${email}`)
+  fetch(`https://{DOMAIN}/mymovie-apigw/useremail?username=${username}&email=${email_md5}`)
     .then(response => {
       return response.json();
     })
@@ -145,7 +145,7 @@ var signUp = function() {
         }
     })    
     .catch(error => {
-    console.log("失敗しました");
+      $("#signup div#message span").append("登録情報の送信に失敗しました");
     });
 }
 

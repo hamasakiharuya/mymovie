@@ -33,14 +33,17 @@ $(function() {
       method: "delete"
     })
     .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      console.log(data)
-      window.location.href = './edit.html';
-    })    
+      if (!response.ok) {
+        //エラーメッセージ表記初期化
+        $("div#message span").empty();
+        $("div#message span").append("データの削除に失敗しました");
+      } else {
+        window.location.href = './edit.html';
+      }
+    })  
     .catch(error => {
-    console.log("失敗しました");
+      $("div#message span").empty();
+      $("div#message span").append("データの削除に失敗しました");
     });
   });
 
