@@ -95,7 +95,7 @@ var signUp = function() {
         if (message == "Email already exists") {
           $("#signup div#message span").append("Emailはすでに登録されています");
         } else if (message == "usernmae already exists") {
-          $("#signup div#message span").append("UserNameはすでに登録されています");
+          $("#signup div#message span").append("User IDはすでに登録されています");
         } else {
           $("#signup div#message span").append(message);
         }

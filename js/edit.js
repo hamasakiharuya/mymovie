@@ -72,7 +72,7 @@ var GetUser = function(user_id){
             var sns = currentUserData["website"];
             //ナビゲーションバー
             NavBer();
-            $("#preferred_username").append(`<input class="form-control" id="username" value="${preferred_username}"><input class="form-control" id="user_id" value="${user_id}" type="hidden">`)
+            $("#preferred_username").append(`<input class="form-control" id="username" value="${preferred_username}"><input class="form-control" id="current_user_id" value="${user_id}" type="hidden">`)
             if (sns) {
               $("#sns").append(`<input class="form-control" id="website" value="${sns}">`)
             } else {
@@ -177,7 +177,7 @@ var Update = function(){
 }
 
 var Updateuser = function(){
-  var user = $("#user_id").val();
+  var user = $("#current_user_id").val();
   fetch(`https://{DOMAIN}/mymovie-apigw/user?upduser=${user}`,{
       method: "put"
     })
