@@ -74,7 +74,7 @@ var Age = function(birthdate){
 };
 
 var UserList = function(title){
-  var uri = `https://{DOMAIN}/mymovie-apigw/movie?title=${title}`
+  var uri = `https://{DOMAIN}/api/movie?title=${title}`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定

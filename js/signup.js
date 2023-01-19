@@ -82,7 +82,7 @@ var signUp = function() {
       return false;
     }
 
-  fetch(`https://{DOMAIN}/mymovie-apigw/useremail?username=${username}&email=${email_md5}`)
+  fetch(`https://{DOMAIN}/api/useremail?username=${username}&email=${email_md5}`)
     .then(response => {
       return response.json();
     })

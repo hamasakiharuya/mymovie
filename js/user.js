@@ -122,7 +122,7 @@ var GetUser = function(id_token){
 
 //userテーブルからuser_idをランダムで取得
 var RandomUser = function(){
-  var uri = `https://{DOMAIN}/mymovie-apigw/userid`
+  var uri = `https://{DOMAIN}/api/userid`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -214,7 +214,7 @@ var Card = function(data_i){
 };
 
 var release = function(user_id){
-  var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=release`
+  var uri = `https://{DOMAIN}/api/user?topuser=${user_id}&list=release`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -313,7 +313,7 @@ var release = function(user_id){
 
 
 var register = function(user_id){
-  var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=register`
+  var uri = `https://{DOMAIN}/api/user?topuser=${user_id}&list=register`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -375,7 +375,7 @@ var register = function(user_id){
 };
 
 var score = function(user_id){
-  var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=score`
+  var uri = `https://{DOMAIN}/api/user?topuser=${user_id}&list=score`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -501,7 +501,7 @@ var GetUser_Follow = function(follow,already_follow){
 
 //フォローする
 var Follow = function(user_id, follow, id_token){
-  fetch(`https://{DOMAIN}/mymovie-apigw/follow?user_id=${user_id}&follow=${follow}`,{
+  fetch(`https://{DOMAIN}/api/follow?user_id=${user_id}&follow=${follow}`,{
     method: 'POST',
     headers: {
       Authorization: id_token

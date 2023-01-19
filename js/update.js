@@ -26,7 +26,7 @@ $(function() {
 
   //削除
   $("#delete_btn").on('click',function() {
-    fetch(`https://{DOMAIN}/mymovie-apigw/movie?user_id=${user_id}&title=${title}`,{
+    fetch(`https://{DOMAIN}/api/movie?user_id=${user_id}&title=${title}`,{
       headers: {
         Authorization: id_token
       },

@@ -108,7 +108,7 @@ var Card = function(data_i){
 };
 
 var register = function(user_id){
-  var uri = `https://{DOMAIN}/mymovie-apigw/user?topuser=${user_id}&list=register`
+  var uri = `https://{DOMAIN}/api/user?topuser=${user_id}&list=register`
   $.ajax({
     type: 'GET', // HTTPリクエストメソッドの指定
     url: uri, // 送信先URLの指定
@@ -178,7 +178,7 @@ var Update = function(){
 
 var Updateuser = function(){
   var user = $("#current_user_id").val();
-  fetch(`https://{DOMAIN}/mymovie-apigw/user?upduser=${user}`,{
+  fetch(`https://{DOMAIN}/api/user?upduser=${user}`,{
       method: "put"
     })
     .then(response => {

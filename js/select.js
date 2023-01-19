@@ -4,7 +4,7 @@ window.onload = function(){
   $(".select").change(function() {
     $("#results").empty();
     targetText = $(this).val();
-    var uri = `https://{DOMAIN}/mymovie-apigw/search?query=${targetText}`;
+    var uri = `https://{DOMAIN}/api/search?query=${targetText}`;
     var enuri = encodeURI(uri);
     $.ajax({
       type: 'GET', // HTTPリクエストメソッドの指定
