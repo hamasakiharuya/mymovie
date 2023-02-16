@@ -22,8 +22,8 @@ fi
 
 for i in ${TARGET_FILE_LIST[@]}
 do
-  sed 's/'{USER_POOL_ID}'/'${USER_POOL_ID}'/' $i
-  sed 's/'{CLIENT_ID}'/'${CLIENT_ID}'/' $i
+  sed -i 's/'{USER_POOL_ID}'/'${USER_POOL_ID}'/' $i
+  sed -i 's/'{CLIENT_ID}'/'${CLIENT_ID}'/' $i
   USER_POOL=`grep "user_pool_id" $i | tr -d ' '`
   CLIENT=`grep "client_id" $i | tr -d ' '`
   echo "---$i---
