@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <!-- viewport meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Required cognito -->
+    <script src="js/cognito/jsbn.js"></script>
+    <script src="js/cognito/jsbn2.js"></script>
+    <script src="js/cognito/sjcl.js"></script>
+    <script src="js/cognito/aws-sdk.min.js"></script>
+    <script src="js/cognito/aws-cognito-sdk.min.js"></script>
+    <script src="js/cognito/amazon-cognito-identity.min.js"></script>
+    <!-- Required jquery -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- Required js/css -->
+    <link rel="stylesheet" href="css/score.css">
+    <link rel="stylesheet" href="css/about.css">
+  </head>
+  <body>
+    <div>
+      <div>
+        <div class="container-fluid w-75 p-3">
+          <div class="d-flex justify-content-end" id="signinup">
+            <a class="d-flex text-black-50 fs-6" href="./signup.html">会員登録</a>&emsp;<a class="d-flex text-black-50 fs-6" href="./sginin.html">ログイン</a>
+          </div>
+        </div>
+      </div>
+<!-- ナビゲーションバー -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid w-75 p-3">
+          <a class="navbar-brand" href="./user.html">My Movie</a>
+        </div>
+      </nav>
+      <!-- aboutページ -->
+      <div>
+        <section class="wrapper1">
+          <div class="container1">
+              <div class="content1">
+                  <h2 class="heading1">MyMovie</h2>
+                  <p>観た映画を管理するアプリ</p>
+              </div>
+          </div>
+        </section>
+        <section class="wrapper2">
+          <div class="container2">
+              <div class="content2">
+                  <div class="content-item2">
+                      <img src="img/list2.png" class="image2">
+                  </div>    
+                  <div class="content-item2">
+                      <div class="text2">
+                          <h2 class="heading2">MyMovieとは</h2>
+                          <p>MyMovieは観た映画を点数をつけて保存、一覧表示できるアプリです。他ユーザの観た映画一覧も閲覧できます。</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </section>
+        <section class="wrapper3">
+          <div class="container3">
+              <div class="content3">
+                <h2 class="heading3">機能</h2>
+                <div class="list3">
+                    <div class="list-item3">
+                      <img src="img/register.png" class="image3">
+                      <div class="text3">観た映画を登録</div>
+                    </div>
+                    <div class="list-item3">
+                      <img src="img/list.png" class="image3">
+                      <div class="text3">観た映画一覧を表示</div>
+                    </div>    
+                    <div class="list-item3">
+                      <img src="img/follow.png" class="image3">
+                      <div class="text3">気になるユーザをフォロー</div>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </section>
+        <section class="wrapper4">
+          <div class="container4">
+              <div class="content4">
+                  <h2 class="heading4">会員登録して観た映画を登録しよう</h2>
+                  <div class="list4">
+                      <div class="list-item4"><a class="list-item4" href="./signup.html">会員登録</a></div>
+                      <div class="list-item4"><a class="list-item4" href="./signin.html">ログイン</a></div>
+                      <div class="list-item4"><a class="list-item4" href="./user.html">他ユーザのMyMovieを見る</a></div>
+                  </div>
+              </div>
+          </div>
+        </section>
+      </div>
+      <!-- フッター -->
+      <div>
+        <br><br><br><br><br><br><br><br><br>
+        <div class="p-3 mb-2 bg-light text-dark">
+          <div class="fw-light container-fluid w-75 p-3 d-flex justify-content-center" >
+            <a class="text-secondary" href="./about.html">about</a>
+            &nbsp;/&nbsp;
+            <a class="text-secondary" href="./contact.html">お問合せ</a>
+            &nbsp;/&nbsp;
+            <a class="text-secondary" href="./userpolicy.html">利用規約</a>
+            &nbsp;/&nbsp;
+            <a class="text-secondary" href="./privacypolicy.html">プライバシーポリシー</a>
+          </div>
+          <div class="container-fluid w-75 p-3">
+            <p class="d-flex justify-content-center fw-light">© 2022 My Movies </p>
+            <p class="d-flex justify-content-center text-center"><span class="fw-bolder">powered by: TMDB<span><br>
+            <span class="fw-lighter">This product uses the TMDb API but is not endorsed or certified by TMDb.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
