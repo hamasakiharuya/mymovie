@@ -6,4 +6,5 @@
 <br>
 <img src="./img/readme_movie_list.png" width="1000">
 <br>
-<img src="./img/readme_movie_%20Responsive.png" width="300">
+
+<img src="./img/readme_movie_%20Responsive.png" width="200">
