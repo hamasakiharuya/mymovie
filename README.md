@@ -6,3 +6,6 @@
 
 ![映画リスト画像](./img/readme_movie_list.png)
 ![映画リスト(レスポンシブ)画像](./img/readme_movie_%20Responsive.png)
+
+<img src="./img/readme_movie_list.png" width="200">
+<img src="./img/readme_movie_%20Responsive.png" width="100">
