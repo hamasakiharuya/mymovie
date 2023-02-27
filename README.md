@@ -11,6 +11,7 @@
 
 # サービスURL
 <p><a href="https://mymovie.jp/" target="_blank">mymovie.jp</a></p>
+TOPページ下方の「他ユーザのMyMovieを見る」ボタンから、ログインせずに投稿映画一覧が閲覧できます。
 
 # 使用技術
 * フロントエンド
