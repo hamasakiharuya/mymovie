@@ -11,6 +11,7 @@
 
 # サービスURL
 <p><a href="https://mymovie.jp" target="_blank" rel="noopener noreferrer">mymovie.jp</a></p>
+<p><a href="https://mymovie.jp/" target="_blank">mymovie.jp</a></p>
 
 # 使用技術
 * フロントエンド
