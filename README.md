@@ -10,4 +10,4 @@
 
 <img src="./img/readme_movie_list.png" width="1000">
 
-<img src="./img/readme_movie_%20Responsive.png" width="700">
+<img src="./img/readme_movie_%20Responsive.png" width="500">
