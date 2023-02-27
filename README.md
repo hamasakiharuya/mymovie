@@ -10,7 +10,7 @@
 <img src="./img/readme_movie_%20Responsive.png" width="200">
 
 # サービスURL
-[mymovie.jp](mymovie.jp)
+[mymovie.jp](https://mymovie.jp)
 
 # 使用技術
 * フロントエンド
