@@ -52,6 +52,7 @@ TOPページ下方の「他ユーザのMyMovieを見る」ボタンから、ロ�
 <img src="./img/system_ architecture.png" width="800">
 
 # CI/CD
+* GitHubへのPush時に、GitHub Actionsが自動で実行されます。
 * (アプリケーションファイル)GitHubActionsが実行されると、AWSから取得した値をJSファイルに書き込むShellScriptが実行され、GItHubリポジトリのアプリケーションファイルがS3へ差分アップロードされます。
 * (IaCファイル)GitHubActionsが実行されると、実行環境であるUbuntuにcfn-lintがインストールされCloudFormationファイルの構文チェックが実行されます。<br>その後、sam deployコマンドによって、CloudFormation定義ファイルに記載されたサービスがデプロイされます。
 * GitHubActionsのEnviromentsにstgとprodが設定されており、一度のPushで二つの環境にアプリケーションファイルがデプロイされます。<br>なお、prod環境へのデプロイは事前に登録されたGItHubユーザによる承認が必要です。  
