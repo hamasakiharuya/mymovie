@@ -52,7 +52,8 @@
 <img src="./img/system_ architecture.png" width="800">
 
 # CI/CD
-GItHubへのPush時に、GitHub Actionsが自動で実行されます。  
+GitHubへのPush時に、GitHubActionsが自動で実行されます。  
 (アプリケーションファイル)GitHubActionsが実行されると、AWSからCloudFrontのCNAME、CognitoのUserPool IDを取得しJSファイルに書き込むShellScriptが実行され、GItHubリポジトリにPushしたアプリケーションファイルがS3へ差分アップロードされます。  
 (IaCファイル)GitHubActionsが実行されると、実行環境であるUbuntuにcfn-lintがインストールされCloudFormationファイルの構文チェックが実行されます。その後、AWS SAMフレームワークによるsam deployコマンドが実行され、CloudFormation定義ファイルに記載されたサービスがAWS環境にデプロイされます。  
 GitHubActionsのEnviromentsにstgとprodが設定されており、一度のPushで二つの環境にアプリケーションファイルがデプロイされます。なお、prod環境へのデプロイは事前に登録されたGItHubユーザによる承認が必要です。  
+
