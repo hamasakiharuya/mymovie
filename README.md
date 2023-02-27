@@ -47,3 +47,6 @@ mymovie.jp
   * Ubuntu  
 * API  
   * TMDB  
+
+# システム構成図
+<img src="./img/system_ architecture.png" width="1000">
