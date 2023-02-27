@@ -73,12 +73,12 @@ TOPページ下方の「他ユーザのMyMovieを見る」ボタンから、ロ�
 * フォロー削除機能  
 
 # 非機能一覧	
-###### 可用性  
+### 可用性  
 本システムはAWSマネージドサービスの中でもグローバルサービス、VPC外に存在するリージョンサービスのみで構成されており、単一障害点は存在しないシステムとなっている。	
 また、AWSより提供されているマネージドサービスそれぞれの可用性目標値は以下を参照。いずれも99.900%を超える高い可用性目標値が設定されている。	
 https://docs.aws.amazon.com/ja_jp/wellarchitected/latest/reliability-pillar/appendix-a-designed-for-availability-for-select-aws-services.html	
 	
-###### 性能・拡張性	
+##### 性能・拡張性	
 AWSマネージドサービスの拡張機能を以下に記載する。	
 	CloudFront
 	CloudFrontはデフォルトで150Gbpsのデータ転送速度、ディストリビューションあたり250,000リクエスト数の処理性能が提供されている。これらの値は申請をすることで上限緩和が可能である。
