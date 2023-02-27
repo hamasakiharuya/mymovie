@@ -8,3 +8,42 @@
 <br>
 
 <img src="./img/readme_movie_%20Responsive.png" width="200">
+
+# サービスURL
+mymovie.jp
+
+# 使用技術
+* フロントエンド
+  * HTML  
+  * CSS  
+  * JavaScript  
+  * Bootstrap5  
+* バックエンド  
+  * Python3.9  
+  * Node.js14  
+* インフラ(AWS)  
+  * CloudFront  
+  * S3  
+  * API Gateway  
+  * Lambda  
+  * DynamoDB  
+  * Cognito  
+  * AWS Organizations  
+  * AWS Backup  
+  * CloudWatch  
+  * CloudWatchLogs  
+  * KinesisDataFirehose  
+  * EventBridge  
+  * SNS  
+  * Athena  
+  * Route53  
+  * AWSCertificateManager  
+  * CloudFormation  
+  * AWS SAM  
+* コード管理  
+  * GitHub  
+* CI/CD  
+  * GItHub Actions  
+  * Ubuntu  
+* API  
+  * TMDB  
